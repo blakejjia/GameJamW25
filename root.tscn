@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ui17nrjjqfp" path="res://background/TheGrid/Assert/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
 [ext_resource type="Texture2D" uid="uid://ot6rdujnwkdf" path="res://background/bg.png" id="1_lyym1"]
 [ext_resource type="Script" path="res://background/TheGrid/theGrid.gd" id="2_nlp6b"]
-[ext_resource type="Script" path="res://playerInfo/player_info.gd" id="3_fxolt"]
+[ext_resource type="Script" path="res://playerInfo/Player.gd" id="3_fxolt"]
 
 [node name="root" type="Node2D"]
 
