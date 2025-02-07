@@ -6,6 +6,7 @@
 [node name="root" type="Node2D"]
 
 [node name="theGrid" type="Sprite2D" parent="."]
-position = Vector2(602, 270)
 script = ExtResource("2_nlp6b")
 hex_texture = ExtResource("1_jhm11")
+rows = 7
+cols = 52
