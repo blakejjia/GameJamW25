@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://lb7lyvhc8oy"]
+
+[ext_resource type="Texture2D" uid="uid://b6ui17nrjjqfp" path="res://TheGrid/Assert/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
+[ext_resource type="Script" path="res://TheGrid/theGrid.gd" id="2_nlp6b"]
+
+[node name="root" type="Node2D"]
+
+[node name="theGrid" type="Sprite2D" parent="."]
+position = Vector2(602, 270)
+script = ExtResource("2_nlp6b")
+hex_texture = ExtResource("1_jhm11")
