@@ -1,12 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://lb7lyvhc8oy"]
+[gd_scene load_steps=5 format=3 uid="uid://lb7lyvhc8oy"]
 
-[ext_resource type="Texture2D" uid="uid://b6ui17nrjjqfp" path="res://TheGrid/Assert/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
-[ext_resource type="Script" path="res://TheGrid/theGrid.gd" id="2_nlp6b"]
+[ext_resource type="Texture2D" uid="uid://b6ui17nrjjqfp" path="res://background/TheGrid/Assert/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
+[ext_resource type="Texture2D" uid="uid://ot6rdujnwkdf" path="res://background/bg.png" id="1_lyym1"]
+[ext_resource type="Script" path="res://background/TheGrid/theGrid.gd" id="2_nlp6b"]
+[ext_resource type="Script" path="res://playerInfo/player_info.gd" id="3_fxolt"]
 
 [node name="root" type="Node2D"]
 
-[node name="theGrid" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="."]
+
+[node name="backgroundImg" type="Sprite2D" parent="background"]
+position = Vector2(15.9198, 179.25)
+scale = Vector2(1.1236, 0.934082)
+texture = ExtResource("1_lyym1")
+offset = Vector2(500, 0)
+
+[node name="theGrid" type="Sprite2D" parent="background"]
 script = ExtResource("2_nlp6b")
 hex_texture = ExtResource("1_jhm11")
-rows = 7
-cols = 52
+
+[node name="PlayerInfo" type="Sprite2D" parent="."]
+script = ExtResource("3_fxolt")
+
+[node name="healthIndicator" type="Sprite2D" parent="PlayerInfo"]
+
+[node name="tools" type="Sprite2D" parent="PlayerInfo"]
