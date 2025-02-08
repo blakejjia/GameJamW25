@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://lb7lyvhc8oy"]
+[gd_scene load_steps=8 format=3 uid="uid://lb7lyvhc8oy"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_d7y4p"]
 [ext_resource type="Texture2D" uid="uid://b6ui17nrjjqfp" path="res://background/TheGrid/Assert/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
 [ext_resource type="Texture2D" uid="uid://ot6rdujnwkdf" path="res://background/bg.png" id="1_lyym1"]
 [ext_resource type="Script" path="res://background/TheGrid/theGrid.gd" id="2_nlp6b"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bonow4wxqenn" path="res://playerInfo/player_info.tscn" id="5_vtx8r"]
 
 [node name="root" type="Node2D"]
+script = ExtResource("1_d7y4p")
 
 [node name="background" type="Control" parent="."]
 layout_mode = 3

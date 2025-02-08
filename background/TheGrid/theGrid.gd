@@ -31,8 +31,10 @@ const HEX = preload("res://hexagon.tscn")
 var player_texture = load("res://background/TheGrid/Assert/HSI - Icons/HSI - Icon Animals/HSI_icon_013.png")
 func generate_hex_grid(grid: Array):
 	
+	await clear_grid()
+	
 	# Scale texture to wanted
-	var tex_size = hex_texture.get_size()
+	var tex_size = Vector2(210, 210)
 	var scale_factor = Vector2(hex_size.x / tex_size.x, hex_size.y / tex_size.y)
 
 	# Calculate grid dimensions
@@ -69,8 +71,12 @@ func generate_hex_grid(grid: Array):
 			hex_sprite.set_meta("col", col)
 
 			add_child(hexagon)
-			
-# To reference the grid:
-#var target_hex = hex_dict.get(Vector2(2, 3))  # Get hex at row=2, col=3
-#if target_hex:
-	#print("Hex found at:", target_hex.position)
+
+func clear_grid():
+	for n in get_children():
+		remove_child(n)
+		n.queue_free() 
+	hex_dict.clear()
+	await get_tree().process_frame
+	
+	

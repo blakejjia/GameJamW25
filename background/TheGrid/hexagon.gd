@@ -15,7 +15,14 @@ func create_hexagon(position: Vector2, row: int, col: int) -> Hexagon:
 	collision.debug_color = Color(0, 0, 0, 1)
 	hex.add_child(collision)
 	hex.mouse_entered.connect(_on_mouse_entered)
+	hex.input_event.connect(_on_input_event)
 	return hex
 			
 func _on_mouse_entered():
-	print("hexagon selected at: " + str(coords[0]) + ", " + str(coords[1]))
+	pass
+
+func _on_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			BoardState.selected = coords
+			Main.process_turn()
