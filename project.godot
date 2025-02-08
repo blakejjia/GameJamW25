@@ -16,10 +16,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
-BoardState="*res://states/board_state.gd"
-PlayerStates="*res://states/player_states.gd"
+BoardState="*res://common/states/board_state.gd"
+PlayerStates="*res://common/states/player_states.gd"
 Main="*res://main.gd"
-GridFunctions="*res://background/TheGrid/theGrid.gd"
+GridFunctions="*res://assets/background/TheGrid/theGrid.gd"
 AssetConstants="*res://assets/asset_constants.gd"
 
 [dotnet]

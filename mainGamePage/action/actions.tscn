@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxbfhl53ijvwy"]
+
+[ext_resource type="Script" path="res://mainGamePage/playerInfo/info_details/tools.gd" id="1_cr31a"]
+[ext_resource type="Script" path="res://mainGamePage/playerInfo/info_details/item_slot.gd" id="2_uxvo3"]
+
+[node name="actions" type="BoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0383972
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Action1_move" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="move" type="Label" parent="VBoxContainer/Action1_move"]
+layout_mode = 2
+text = "move"
+
+[node name="Action2_item" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_cr31a")
+
+[node name="use_item" type="Label" parent="VBoxContainer/Action2_item"]
+layout_mode = 2
+text = "use item!"
+
+[node name="slot1" type="TextureRect" parent="VBoxContainer/Action2_item"]
+layout_mode = 2
+script = ExtResource("2_uxvo3")
+
+[node name="slot2" type="TextureRect" parent="VBoxContainer/Action2_item"]
+layout_mode = 2
+script = ExtResource("2_uxvo3")
+
+[node name="slot3" type="TextureRect" parent="VBoxContainer/Action2_item"]
+layout_mode = 2
+script = ExtResource("2_uxvo3")
