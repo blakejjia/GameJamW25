@@ -18,3 +18,12 @@ class_name Player
 
 ## player name
 @export var player_name: String = "default"
+
+## generater function
+func set_data(name: String, job: String, health: int, items: Array[String], position: Vector2) -> Player:
+	self.player_name = name
+	self.job = job
+	self.health = health
+	self.items = items
+	self.player_position = position
+	return self

@@ -12,6 +12,8 @@ var item_assets_path:String = AssetConstants.item_assets_path
 var suffix:String = AssetConstants.resource_suffix
 
 func _ready() -> void:
+	self.custom_minimum_size = Vector2(40, 40)  
+	self.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED 
 	update_item()
 
 func update_item():

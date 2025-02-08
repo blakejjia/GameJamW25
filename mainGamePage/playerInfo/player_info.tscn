@@ -32,6 +32,22 @@ script = ExtResource("1_fvcpj")
 [node name="VBoxContainer" type="VBoxContainer" parent="info"]
 layout_mode = 2
 
+[node name="Health" type="HBoxContainer" parent="info/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_om1p3")
+
+[node name="1" type="TextureRect" parent="info/VBoxContainer/Health"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+
+[node name="2" type="TextureRect" parent="info/VBoxContainer/Health"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+
+[node name="3" type="TextureRect" parent="info/VBoxContainer/Health"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+
 [node name="items" type="HBoxContainer" parent="info/VBoxContainer"]
 layout_mode = 2
 script = ExtResource("1_ctnad")
@@ -50,22 +66,6 @@ script = ExtResource("4_wl0g0")
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_qjfgu")
 script = ExtResource("4_wl0g0")
-
-[node name="Health" type="HBoxContainer" parent="info/VBoxContainer"]
-layout_mode = 2
-script = ExtResource("1_om1p3")
-
-[node name="1" type="TextureRect" parent="info/VBoxContainer/Health"]
-layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_qjfgu")
-
-[node name="2" type="TextureRect" parent="info/VBoxContainer/Health"]
-layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_qjfgu")
-
-[node name="3" type="TextureRect" parent="info/VBoxContainer/Health"]
-layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_qjfgu")
 
 [node name="Job" type="Label" parent="."]
 layout_mode = 2

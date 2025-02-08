@@ -8,7 +8,6 @@ extends Control
 		update()
 
 @export var player_info_scene: PackedScene
-
 @onready var ui_container = $info
 
 func _ready():
@@ -20,30 +19,21 @@ func _ready():
 func init():
 	var player1 = Player.new()
 	var player2 = Player.new()
-	player2.health = 2
-	player2.job = "doctor"
+	player1.health = 2
+	player1.job = "doctor"
 
 	players_data.append(player1)
 	players_data.append(player2)
 
 ## Adjusting user interface based on player state
 ## creating proper number of player info indicator sets
-func update():
-	## TODO: see if we need this
-	#ui_container.set_anchor(SIDE_RIGHT, 1) 
-	#ui_container.set_anchor(SIDE_TOP, 1) 
-	
+func update():	
 	for i in players_data:
 		var player_ui = player_info_scene.instantiate()
 
 		# places to assign things
-		var health:int = player_ui.get_node("info/VBoxContainer/Health").health
-		var items:Array[String] = player_ui.get_node("info/VBoxContainer/items").items
-		var job:String = player_ui.get_node("info/avatar").job
-		
-		# assign
-		health = i.health
-		items = i.items
-		job = i.job
+		player_ui.get_node("info/VBoxContainer/Health").health = i.health
+		player_ui.get_node("info/VBoxContainer/items").items = i.items
+		player_ui.get_node("info/avatar").job = i.job
 		
 		ui_container.add_child(player_ui)

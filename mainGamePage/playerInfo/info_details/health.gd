@@ -22,3 +22,5 @@ func update_health_display():
 		var heart = get_child(i) as TextureRect
 		if heart:
 			heart.texture = heart_res if i < health else null
+			heart.custom_minimum_size = Vector2(40, 40) 
+			heart.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED

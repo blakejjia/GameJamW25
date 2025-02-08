@@ -14,6 +14,8 @@ var suffix:String = AssetConstants.resource_suffix
 
 ## When ready, call update job
 func _ready() -> void:
+	self.custom_minimum_size = Vector2(80, 80) 
+	self.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL 
 	update_job()
 
 # update_job by it self

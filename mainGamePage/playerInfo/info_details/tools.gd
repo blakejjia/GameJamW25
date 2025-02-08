@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-var items:Array[String] = ["empty","empty","empty"]:
+var items:Array[String]:
 	set(value):
 		items = value
 		update_item_display()
@@ -12,6 +12,6 @@ func _ready() -> void:
 	update_item_display()
 
 func update_item_display():
-	$slot1.item = items[0]
-	$slot2.item = items[1]
-	$slot3.item = items[2]
+	$slot1.item = items[0] if items.size() > 0 else "empty"
+	$slot2.item = items[1] if items.size() > 1 else "empty"
+	$slot3.item = items[2] if items.size() > 2 else "empty"
