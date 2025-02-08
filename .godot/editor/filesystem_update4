@@ -1,0 +1,5 @@
+res://root.tscn
+res://states/board_state.gd
+res://playerInfo/player_info.gd
+res://states/player_states.gd
+res://playerInfo/Player.gd
