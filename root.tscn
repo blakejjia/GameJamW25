@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://lb7lyvhc8oy"]
+[gd_scene load_steps=7 format=3 uid="uid://lb7lyvhc8oy"]
 
 [ext_resource type="Texture2D" uid="uid://b6ui17nrjjqfp" path="res://background/TheGrid/Assert/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
 [ext_resource type="Texture2D" uid="uid://ot6rdujnwkdf" path="res://background/bg.png" id="1_lyym1"]
 [ext_resource type="Script" path="res://background/TheGrid/theGrid.gd" id="2_nlp6b"]
-<<<<<<< HEAD
 [ext_resource type="Script" path="res://playerInfo/player_info.gd" id="3_fxolt"]
+[ext_resource type="PackedScene" uid="uid://copk5xvd2oo8r" path="res://hexagon.tscn" id="4_bxyj8"]
 [ext_resource type="PackedScene" uid="uid://bonow4wxqenn" path="res://playerInfo/player_info.tscn" id="5_vtx8r"]
-=======
-[ext_resource type="Script" path="res://playerInfo/Player.gd" id="3_fxolt"]
->>>>>>> 55c4476e86ef628cccbe5d7cd048e42b108f35b4
 
 [node name="root" type="Node2D"]
 
@@ -26,6 +23,8 @@ offset = Vector2(500, 0)
 [node name="theGrid" type="Sprite2D" parent="background"]
 script = ExtResource("2_nlp6b")
 hex_texture = ExtResource("1_jhm11")
+
+[node name="Hexagon" parent="background" instance=ExtResource("4_bxyj8")]
 
 [node name="PlayerInfo" type="Control" parent="."]
 layout_mode = 3

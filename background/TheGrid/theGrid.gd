@@ -27,6 +27,7 @@ func _ready():
 
 # for future reference
 var hex_dict = {}
+const HEX = preload("res://hexagon.tscn")
 
 func generate_hex_grid():
 	
@@ -45,21 +46,24 @@ func generate_hex_grid():
 			var x_offset = int(row/2)
 			var x_pos = (col * hex_size.x * 0.75) + (row * hex_size.x * 0.4) - (hex_size.x * 0.8 * x_offset)+ grid_offset.x
 			var y_pos = row * hex_size.y * 0.65 + grid_offset.y
-			
+			var h = HEX.instantiate()
+			var hexagon = h.create_hexagon(Vector2(x_pos, y_pos), row, col)
 			var hex_sprite = Sprite2D.new()
 			hex_sprite.texture = hex_texture
 			hex_sprite.position = Vector2(x_pos, y_pos)
 			hex_sprite.scale = scale_factor
-
+			
+			hexagon.add_child(hex_sprite)
+			
 			# Store in dictionary
 			var key = Vector2(row, col)
-			hex_dict[key] = hex_sprite
+			hex_dict[key] = hexagon
 			
 			# Assign metadata
 			hex_sprite.set_meta("row", row)
 			hex_sprite.set_meta("col", col)
 
-			add_child(hex_sprite)
+			add_child(hexagon)
 			
 # To reference the grid:
 #var target_hex = hex_dict.get(Vector2(2, 3))  # Get hex at row=2, col=3
