@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bonow4wxqenn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hovcc"]
+size = Vector2(50, 50)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qjfgu"]
+size = Vector2(20, 20)
+
+[node name="Player with rank" type="VBoxContainer"]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="info" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="avatar" type="TextureRect" parent="info"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_hovcc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="info"]
+layout_mode = 2
+
+[node name="health" type="Label" parent="info/VBoxContainer"]
+layout_mode = 2
+text = "health here"
+
+[node name="tools" type="HBoxContainer" parent="info/VBoxContainer"]
+layout_mode = 2
+
+[node name="slot1" type="TextureRect" parent="info/VBoxContainer/tools"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+
+[node name="slot2" type="TextureRect" parent="info/VBoxContainer/tools"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+
+[node name="slot3" type="TextureRect" parent="info/VBoxContainer/tools"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+
+[node name="Rank" type="Label" parent="."]
+layout_mode = 2
+text = "tank here"
+horizontal_alignment = 1
