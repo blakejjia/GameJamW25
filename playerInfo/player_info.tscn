@@ -1,4 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bonow4wxqenn"]
+[gd_scene load_steps=7 format=3 uid="uid://bonow4wxqenn"]
+
+[ext_resource type="Script" path="res://playerInfo/info_details/tools.gd" id="1_ctnad"]
+[ext_resource type="Script" path="res://playerInfo/info_details/avatar.gd" id="1_fvcpj"]
+[ext_resource type="Script" path="res://playerInfo/info_details/health.gd" id="1_om1p3"]
+[ext_resource type="Script" path="res://playerInfo/info_details/item_slot.gd" id="4_wl0g0"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hovcc"]
 size = Vector2(50, 50)
@@ -22,30 +27,47 @@ alignment = 1
 [node name="avatar" type="TextureRect" parent="info"]
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_hovcc")
+script = ExtResource("1_fvcpj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="info"]
 layout_mode = 2
 
-[node name="health" type="Label" parent="info/VBoxContainer"]
+[node name="items" type="HBoxContainer" parent="info/VBoxContainer"]
 layout_mode = 2
-text = "health here"
+script = ExtResource("1_ctnad")
 
-[node name="tools" type="HBoxContainer" parent="info/VBoxContainer"]
+[node name="slot1" type="TextureRect" parent="info/VBoxContainer/items"]
 layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+script = ExtResource("4_wl0g0")
 
-[node name="slot1" type="TextureRect" parent="info/VBoxContainer/tools"]
+[node name="slot2" type="TextureRect" parent="info/VBoxContainer/items"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+script = ExtResource("4_wl0g0")
+
+[node name="slot3" type="TextureRect" parent="info/VBoxContainer/items"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qjfgu")
+script = ExtResource("4_wl0g0")
+
+[node name="Health" type="HBoxContainer" parent="info/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_om1p3")
+
+[node name="1" type="TextureRect" parent="info/VBoxContainer/Health"]
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_qjfgu")
 
-[node name="slot2" type="TextureRect" parent="info/VBoxContainer/tools"]
+[node name="2" type="TextureRect" parent="info/VBoxContainer/Health"]
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_qjfgu")
 
-[node name="slot3" type="TextureRect" parent="info/VBoxContainer/tools"]
+[node name="3" type="TextureRect" parent="info/VBoxContainer/Health"]
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_qjfgu")
 
-[node name="Rank" type="Label" parent="."]
+[node name="Job" type="Label" parent="."]
 layout_mode = 2
 text = "tank here"
 horizontal_alignment = 1

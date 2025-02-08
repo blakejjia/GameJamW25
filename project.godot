@@ -20,6 +20,7 @@ BoardState="*res://states/board_state.gd"
 PlayerStates="*res://states/player_states.gd"
 Main="*res://main.gd"
 GridFunctions="*res://background/TheGrid/theGrid.gd"
+AssetConstants="*res://assets/asset_constants.gd"
 
 [dotnet]
 

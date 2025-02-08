@@ -25,6 +25,7 @@ export_presets.cfg
 *.app
 *.dmg
 *.apk
+*.tmp
 *.ipa
 *.xcodeproj
 *.xcworkspace
