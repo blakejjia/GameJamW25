@@ -1,6 +1,6 @@
 extends Area2D
 class_name Hexagon
-const HEX = preload("res://hexagon.tscn")
+const HEX = preload("res://mainGamePage/TheGrid/hexagon.tscn")
 
 var coords: Vector2
 

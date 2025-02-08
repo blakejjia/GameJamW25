@@ -27,7 +27,7 @@ func _ready():
 
 # for future reference
 var hex_dict = {}
-const HEX = preload("res://hexagon.tscn")
+const HEX = preload("res://mainGamePage/TheGrid/hexagon.tscn")
 var player_texture = load("res://background/TheGrid/Assert/HSI - Icons/HSI - Icon Animals/HSI_icon_013.png")
 func generate_hex_grid(grid: Array):
 	

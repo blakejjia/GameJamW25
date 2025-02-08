@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ot6rdujnwkdf" path="res://assets/background/bg.png" id="1_lyym1"]
 [ext_resource type="Script" path="res://mainGamePage/TheGrid/theGrid.gd" id="2_nlp6b"]
 [ext_resource type="Script" path="res://mainGamePage/playerInfo/player_info.gd" id="3_fxolt"]
-[ext_resource type="PackedScene" uid="uid://copk5xvd2oo8r" path="res://hexagon.tscn" id="4_bxyj8"]
+[ext_resource type="PackedScene" uid="uid://copk5xvd2oo8r" path="res://mainGamePage/TheGrid/hexagon.tscn" id="4_bxyj8"]
 [ext_resource type="PackedScene" uid="uid://bonow4wxqenn" path="res://mainGamePage/playerInfo/player_info.tscn" id="5_vtx8r"]
 [ext_resource type="Script" path="res://mainGamePage/action/select_behavior.gd" id="8_jonux"]
 [ext_resource type="PackedScene" uid="uid://bxbfhl53ijvwy" path="res://mainGamePage/action/actions.tscn" id="9_lcim7"]
@@ -20,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_d7y4p")
 
 [node name="background" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
