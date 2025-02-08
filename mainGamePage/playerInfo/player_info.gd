@@ -9,7 +9,7 @@ extends Control
 
 @export var player_info_scene: PackedScene
 
-@onready var ui_container = $PlayerInfo
+@onready var ui_container = $info
 
 func _ready():
 	init()
@@ -30,14 +30,8 @@ func init():
 ## creating proper number of player info indicator sets
 func update():
 	## TODO: see if we need this
-	#var base_x = 50  # Starting X position
-	#var base_y = 20  # Fixed Y position (top of the screen)
-	#var spacing = 200  # Space between players
-	## Ensure it scales correctly if the window resizes
-	#self.anchor_left = 0
-	#self.anchor_top = 0
-	#self.anchor_right = 0
-	#self.anchor_bottom = 0
+	#ui_container.set_anchor(SIDE_RIGHT, 1) 
+	#ui_container.set_anchor(SIDE_TOP, 1) 
 	
 	for i in players_data:
 		var player_ui = player_info_scene.instantiate()

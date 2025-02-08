@@ -1,11 +1,11 @@
-extends Node2D
+extends Control
 
 func _ready():
 	PlayerStates.initialize_players()
 	BoardState.initialize_grid(6, 8, 2)
 	BoardState.selected = Vector2(-1, -1)
 	PlayerStates.turn = 0
-
+	
 func process_turn():
 	var selected_coords = BoardState.selected
 	print("selected: " + str(selected_coords[0])  + ", " + str(selected_coords[1]))
