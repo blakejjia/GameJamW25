@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="GameJamProj"
-run/main_scene="res://root.tscn"
+run/main_scene="res://mainGamePage/root.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
 BoardState="*res://common/states/board_state.gd"
 PlayerStates="*res://common/states/player_states.gd"
-Main="*res://main.gd"
-GridFunctions="*res://assets/background/TheGrid/theGrid.gd"
+Main="*res://mainGamePage/main.gd"
+GridFunctions="*res://mainGamePage/TheGrid/theGrid.gd"
 AssetConstants="*res://assets/asset_constants.gd"
 
 [dotnet]

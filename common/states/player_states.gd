@@ -3,7 +3,7 @@ extends Node
 var players: Array
 var player_count: int
 var turn: int # Turn will correspond to the player's index in the players array
-var player_class = load("res://playerInfo/Player.gd")
+var player_class = load("res://mainGamePage/playerInfo/Player.gd")
 
 func initialize_players():
 	players = []

@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://lb7lyvhc8oy"]
+
+[ext_resource type="Script" path="res://mainGamePage/main.gd" id="1_d7y4p"]
+[ext_resource type="Texture2D" uid="uid://b6ui17nrjjqfp" path="res://assets/background/TheGrid/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
+[ext_resource type="Texture2D" uid="uid://ot6rdujnwkdf" path="res://assets/background/bg.png" id="1_lyym1"]
+[ext_resource type="Script" path="res://mainGamePage/TheGrid/theGrid.gd" id="2_nlp6b"]
+[ext_resource type="Script" path="res://mainGamePage/playerInfo/player_info.gd" id="3_fxolt"]
+[ext_resource type="PackedScene" uid="uid://copk5xvd2oo8r" path="res://hexagon.tscn" id="4_bxyj8"]
+[ext_resource type="PackedScene" uid="uid://bonow4wxqenn" path="res://mainGamePage/playerInfo/player_info.tscn" id="5_vtx8r"]
+[ext_resource type="Script" path="res://mainGamePage/action/select_behavior.gd" id="8_jonux"]
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_d7y4p")
+
+[node name="background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="backgroundImg" type="Sprite2D" parent="background"]
+visible = false
+position = Vector2(24, 214)
+scale = Vector2(1.1236, 0.934082)
+texture = ExtResource("1_lyym1")
+offset = Vector2(500, 0)
+
+[node name="theGrid" type="Sprite2D" parent="background"]
+script = ExtResource("2_nlp6b")
+hex_texture = ExtResource("1_jhm11")
+
+[node name="Hexagon" parent="background" instance=ExtResource("4_bxyj8")]
+
+[node name="PlayerInfo" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_fxolt")
+player_info_scene = ExtResource("5_vtx8r")
+
+[node name="PlayerInfo" type="HBoxContainer" parent="PlayerInfo"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="selectBehavior" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_jonux")
+
+[node name="special events" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
