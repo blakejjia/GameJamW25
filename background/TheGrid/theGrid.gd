@@ -21,15 +21,15 @@ extends Node2D
 
 func _ready():
 	if hex_texture:
-		generate_hex_grid()
+		generate_hex_grid(BoardState.grid)
 	else:
 		print("Error: No texture assigned!")
 
 # for future reference
 var hex_dict = {}
 const HEX = preload("res://hexagon.tscn")
-
-func generate_hex_grid():
+var player_texture = load("res://background/TheGrid/Assert/HSI - Icons/HSI - Icon Animals/HSI_icon_013.png")
+func generate_hex_grid(grid: Array):
 	
 	# Scale texture to wanted
 	var tex_size = hex_texture.get_size()
@@ -41,15 +41,20 @@ func generate_hex_grid():
 	var canvas_center = get_viewport_rect().size / 2
 	var grid_offset = canvas_center - Vector2(grid_width / 2, grid_height / 2)
 
-	for row in range(rows):
-		for col in range(cols):
+	for row in range(grid.size()):
+		for col in range(grid[row].size()):
 			var x_offset = int(row/2)
 			var x_pos = (col * hex_size.x * 0.75) + (row * hex_size.x * 0.4) - (hex_size.x * 0.8 * x_offset)+ grid_offset.x
 			var y_pos = row * hex_size.y * 0.65 + grid_offset.y
 			var h = HEX.instantiate()
 			var hexagon = h.create_hexagon(Vector2(x_pos, y_pos), row, col)
 			var hex_sprite = Sprite2D.new()
-			hex_sprite.texture = hex_texture
+			
+			# Assign different sprites depending on the tile value
+			if grid[row][col] == 1:
+				hex_sprite.texture = player_texture
+			else:
+				hex_sprite.texture = hex_texture
 			hex_sprite.position = Vector2(x_pos, y_pos)
 			hex_sprite.scale = scale_factor
 			

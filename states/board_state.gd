@@ -4,7 +4,7 @@ var grid: Array
 signal grid_updated
 
 func _ready():
-	initialize_grid(12, 14, 2)
+	initialize_grid(6, 6, 2)
 	
 func initialize_grid(width: int, height: int, player_count: int):
 	if player_count > 4 or player_count < 2:

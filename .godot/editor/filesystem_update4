@@ -1,3 +1,4 @@
 res://root.tscn
 res://background/TheGrid/hexagon.gd
 res://background/TheGrid/theGrid.gd
+res://states/board_state.gd
