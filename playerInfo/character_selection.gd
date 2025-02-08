@@ -1,11 +1,26 @@
-extends Node
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var players_data = [
+	{
+		"health": "100 HP",
+		"avatar": "police",
+		"slot1": "",
+		"slot2": "",
+		"slot3": ""
+	},{
+		"health": "100 HP",
+		"avatar": "doctor",
+		"slot1": "",
+		"slot2": "",
+		"slot3": ""
+	},{
+		"health": "100 HP",
+		"avatar": "robber",
+		"slot1": "",
+		"slot2": "",
+		"slot3": ""
+	},{
+		"health": "100 HP",
+		"avatar": "athlete",
+		"slot1": "",
+		"slot2": "",
+		"slot3": ""
+	}]
