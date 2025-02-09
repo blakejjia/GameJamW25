@@ -1,10 +1,10 @@
 extends Control
 
 var players_data = [
-	Player.new().set_data("David", "Doctor", 3, ["", "", ""], Vector2(1, 2)),
-	Player.new().set_data("Colt", "Robbery", 3, ["", "", ""], Vector2(3, 4)),
-	Player.new().set_data("Jennifer", "Police", 3, ["", "", ""], Vector2(5, 6)),
-	Player.new().set_data("Emily", "Athletic", 3, ["", "", ""], Vector2(7, 8))
+	Player.new().set_data(10, "David", "Doctor", 3, ["", "", ""], Vector2(1, 2)),
+	Player.new().set_data(10, "Colt", "Robbery", 3, ["", "", ""], Vector2(3, 4)),
+	Player.new().set_data(10, "Jennifer", "Police", 3, ["", "", ""], Vector2(5, 6)),
+	Player.new().set_data(10, "Emily", "Athletic", 3, ["", "", ""], Vector2(7, 8))
 ]
 
 func _ready():

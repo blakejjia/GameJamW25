@@ -1,9 +1,12 @@
 extends Control
 
+
+var winner: Player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	display_winner(1)
+	display_winner()
 
+<<<<<<< HEAD
 func display_winner(winner):
 	var players = PlayerStates.players
 	var avatar_assets_path : String = "res://assets/pictures/"
@@ -13,6 +16,14 @@ func display_winner(winner):
 	$Winner.text = message
 	
 	var winner_image = load(avatar_assets_path + players[winner].job + resource_suffix)
+=======
+func display_winner():
+	var message = "%s Wins" % winner.player_name
+	#var message = "player " + winner.name
+	$Winner.text = message
+	
+	var winner_image = load(AssetPaths.avatar_assets_path + winner.job + AssetPaths.resource_suffix)
+>>>>>>> caae35b11f18c58dae4e76afd664c29e3e762936
 	$TextureRect.texture = winner_image
 	#$portrait_frame.texture = ImageTexture.create_from_image(winner_image)
 

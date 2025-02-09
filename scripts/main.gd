@@ -9,7 +9,7 @@ const DEFAULT_HEALTH = 1
 @onready var event_functions = get_node("Events")
 @onready var item_functions = get_node("ItemButton/ItemFunctions")
 @export var grid_rows: int
-@export var grid_cols: int 
+@export var grid_cols: int
 @export var player_count: int
 @export var event_chance: float
 
@@ -51,7 +51,7 @@ func initialize_players():
 	if GameState.player_count > 0:
 		grid[0][0] = 0 # Top left
 		PlayerStates.players.append(Player.create(DEFAULT_HEALTH, "a", "doctor", 0, 0, ["empty", "empty", "empty"], 0))
-	if GameState.player_count > 1: 
+	if GameState.player_count > 1:
 		grid[grid.size() - 1][grid[0].size() - 1] = 1 # Bottom right
 		PlayerStates.players.append(Player.create(DEFAULT_HEALTH, "b", "athletic", grid.size() - 1, grid[0].size() - 1, ["empty", "empty", "empty"], 1))
 	if GameState.player_count > 2:
@@ -80,7 +80,7 @@ func initialize_players():
 func update_dead_players():
 	for player in PlayerStates.players:
 		if player.health <= 0 and player.id not in PlayerStates.dead_player_ids:
-			BoardState.grid[player.player_x][player.player_y] = -1 
+			BoardState.grid[player.player_x][player.player_y] = -1
 			PlayerStates.dead_player_ids.append(player.id)
 			print(player.player_name, " has died")
 
@@ -119,9 +119,12 @@ func on_tile_clicked(hex_position):
 		BoardState.grid[current_player.player_x][current_player.player_y] = -1
 		current_player.player_x = to_x
 		current_player.player_y = to_y
+		var event_flag = false
 		if BoardState.grid[to_x][to_y] == -2:
-			event_triggered()
+			event_flag = true
 		BoardState.grid[to_x][to_y] = current_player.id
+		if event_flag:
+			event_triggered()
 		next_turn()
 
 	else:
@@ -137,10 +140,10 @@ func is_valid_move(from_x: int, from_y: int, to_x: int, to_y: int):
 		
 	var board_value = BoardState.grid[to_x][to_y]
 	if board_value < 0:
-		return true 	
+		return true
 
 func event_triggered():
-	var random_value = randf()  # Random float between 0 and 1
+	var random_value = randf() # Random float between 0 and 1
 	var cumulative_probability = 0.0
 	for event in EventsState.events:
 		cumulative_probability += event.probability
