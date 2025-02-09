@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhx55muj3jf1g"]
+
+[ext_resource type="Script" path="res://scripts/ui_scripts/game_interface.gd" id="1_k2vgb"]
+
+[node name="GameInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k2vgb")
+
+[node name="Turn" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -17,11 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-BoardState="*res://scripts/board_state.gd"
+BoardState="*res://states/board_state.gd"
 PlayerStates="*res://states/player_states.gd"
 GameState="*res://states/game_state.gd"
 HexagonStates="*res://states/hexagon_states.gd"
-ColorDict="*res://resources/color_dict.gd"
+ScenePaths="*res://globals/scene_paths.gd"
+ColorDict="*res://globals/color_dict.gd"
 
 [dotnet]
 

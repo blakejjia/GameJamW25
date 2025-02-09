@@ -6,6 +6,8 @@ var player_name: String
 var job: String
 var player_x: int
 var player_y: int
+var ui
+var selected_item_index: int
 
 ## id corresponds to the player's turn number and array index in PlayerStates.players
 var id: int

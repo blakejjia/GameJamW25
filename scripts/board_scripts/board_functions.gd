@@ -23,7 +23,6 @@ func draw_board() -> void:
 			
 			var x = (col * OFFSET_X) + screen_center[0]
 			var y = (row * OFFSET_Y) + (screen_center[1] / 4)
-			print("x: ", str(x) + " y: " + str(y))
 			if row % 2 == 0:
 				x += OFFSET_X / 2
 			

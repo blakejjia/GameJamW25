@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3c3px5i0q0cg"]
 
-[ext_resource type="Script" path="res://scripts/hexagon.gd" id="1_eao1m"]
+[ext_resource type="Script" path="res://scripts/board_scripts/hexagon.gd" id="1_eao1m"]
 
 [node name="Hexagon" type="Area2D"]
 script = ExtResource("1_eao1m")

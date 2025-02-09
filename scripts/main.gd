@@ -1,6 +1,12 @@
-extends Node2D
+extends Control
 
 @onready var board_functions = get_node("Board")
+@onready var game_interface = get_node("GameInterface")
+@onready var player_interface = get_node("PlayerInterface")
+
+var game_interface_scene = preload(ScenePaths.game_interface_path)
+var player_interface_scene = preload(ScenePaths.player_interface_path)
+
 @export var grid_rows: int = 10
 @export var grid_cols: int = 12 
 @export var player_count: int = 3
@@ -28,6 +34,8 @@ func initialize_grid():
 			grid[x].append(-1)
 
 func initialize_players():
+	
+	## Add players to board
 	if GameState.player_count > 0:
 		BoardState.grid[0][0] = 0 # Top left
 		PlayerStates.players.append(Player.create(10, "a", "doctor", 0, 0, [], 0))
@@ -40,11 +48,22 @@ func initialize_players():
 	if GameState.player_count > 3:
 		BoardState.grid[-1][0] = 3 # Bottom left
 		PlayerStates.players.append(Player.create(10, "d", "doctor", -1, 0, [], 3))
-
+	
+	for i in range(GameState.player_count):
+		var player_ui = player_interface_scene.instantiate()
+		add_child(player_ui)
+		PlayerStates.players[i].ui = player_ui
+		update_player_health(100, i)
+		update_player_name(PlayerStates.players[i].player_name, i)
+		update_player_job(PlayerStates.players[i].job, i)
+		player_ui.position = Vector2(200, 100 + (i * 100))
+	update_turn_label()
+		
 ## Increments the current turn, then redraws the board
 func next_turn():
 	GameState.current_turn = (GameState.current_turn + 1) % player_count
 	board_functions.update_board()
+	update_turn_label()
 
 ## Called when a tile is clicked (currently moves the player to that position)
 func on_tile_clicked(hex_position):
@@ -63,3 +82,19 @@ func on_tile_clicked(hex_position):
 
 func is_valid_move(from_x: int, from_y: int, to_x: int, to_y: int):
 	return true	
+
+func update_player_job(new_job: String, index: int) -> void:
+	PlayerStates.players[index].ui.update_job(new_job)
+
+func update_player_name(new_name: String, index: int) -> void:
+	PlayerStates.players[index].ui.update_name(new_name)
+
+func update_player_avatar(new_texture: Texture2D, index: int) -> void:
+	PlayerStates.players[index].ui.update_avatar(new_texture)
+
+func update_player_health(new_health: int, index: int) -> void:
+	PlayerStates.players[index].ui.update_health(new_health)
+
+func update_turn_label() -> void:
+	var current_player_name = PlayerStates.players[GameState.current_turn].player_name
+	game_interface.update_turn(current_player_name + "'s" + " Turn")

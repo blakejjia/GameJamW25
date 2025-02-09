@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqtmve83albv6"]
+[gd_scene load_steps=5 format=3 uid="uid://dqtmve83albv6"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_rvwpr"]
-[ext_resource type="Script" path="res://scripts/board_functions.gd" id="2_o663g"]
+[ext_resource type="Script" path="res://scripts/board_scripts/board_functions.gd" id="2_o663g"]
+[ext_resource type="PackedScene" uid="uid://dhx55muj3jf1g" path="res://ui/GameInterface.tscn" id="3_h0sde"]
+[ext_resource type="PackedScene" uid="uid://2sk0rjp5nwso" path="res://ui/PlayerInterface.tscn" id="4_gfo6w"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_rvwpr")
 
 [node name="Board" type="Node2D" parent="."]
 script = ExtResource("2_o663g")
+
+[node name="GameInterface" parent="." instance=ExtResource("3_h0sde")]
+layout_mode = 1
+
+[node name="PlayerInterface" parent="." instance=ExtResource("4_gfo6w")]
+layout_mode = 1
