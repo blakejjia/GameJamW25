@@ -1,15 +1,18 @@
 extends Node
 class_name Player
 
-var health: float
+var health: int
 var player_name: String
 var job: String
 var player_x: int
 var player_y: int
-var id: int 
-var items: Array
 
-static func create(p_health: float, p_player_name: String, p_job: String, p_player_x: int, p_player_y: int, p_items: Array, p_id: int) -> Player:
+## id corresponds to the player's turn number and array index in PlayerStates.players
+var id: int
+
+var items: Array[String]
+
+static func create(p_health: int, p_player_name: String, p_job: String, p_player_x: int, p_player_y: int, p_items: Array[String], p_id: int) -> Player:
 	var instance = Player.new()
 	instance.health = p_health
 	instance.player_name = p_player_name

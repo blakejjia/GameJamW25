@@ -5,10 +5,13 @@ extends Node2D
 @export var grid_cols: int = 12 
 @export var player_count: int = 3
 
+## Initializes the global variables
 func _ready() -> void:
 	BoardState.grid_cols = grid_cols
 	BoardState.grid_rows = grid_rows
+	GameState.player_count = player_count
 	initialize_grid()
+	initialize_players()
 	board_functions.draw_board()
 	for col in HexagonStates.hexagons:
 		for hexagon in col:
@@ -24,23 +27,26 @@ func initialize_grid():
 		for y in range(grid_rows):
 			grid[x].append(-1)
 
-	if player_count > 0:
-		grid[0][0] = 0 # Top left
+func initialize_players():
+	if GameState.player_count > 0:
+		BoardState.grid[0][0] = 0 # Top left
 		PlayerStates.players.append(Player.create(10, "a", "doctor", 0, 0, [], 0))
-	if player_count > 1: 
-		grid[-1][-1] = 1 # Bottom right
+	if GameState.player_count > 1: 
+		BoardState.grid[-1][-1] = 1 # Bottom right
 		PlayerStates.players.append(Player.create(10, "b", "doctor", -1, -1, [], 1))
-	if player_count > 2:
-		grid[0][-1] = 2 # Top right
+	if GameState.player_count > 2:
+		BoardState.grid[0][-1] = 2 # Top right
 		PlayerStates.players.append(Player.create(10, "c", "doctor", 0, -1, [], 2))
-	if player_count > 3:
-		grid[-1][0] = 3 # Bottom left
+	if GameState.player_count > 3:
+		BoardState.grid[-1][0] = 3 # Bottom left
 		PlayerStates.players.append(Player.create(10, "d", "doctor", -1, 0, [], 3))
 
+## Increments the current turn, then redraws the board
 func next_turn():
 	GameState.current_turn = (GameState.current_turn + 1) % player_count
 	board_functions.update_board()
 
+## Called when a tile is clicked (currently moves the player to that position)
 func on_tile_clicked(hex_position):
 	var to_x = hex_position[0]
 	var to_y = hex_position[1]

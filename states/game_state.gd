@@ -1,3 +1,6 @@
 extends Node
 
-var current_turn: int = 0 # represents the turn/index of the current player
+## represents the turn/index of the current player
+var current_turn: int = 0 
+
+var player_count: int 

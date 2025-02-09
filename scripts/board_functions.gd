@@ -39,7 +39,8 @@ func update_board():
 			hex.hex_color = ColorDict.color_dict[BoardState.grid[col][row]]
 			hex.last_color = hex.hex_color
 			hex.update_visuals()
-						
+
+## Sets a board cell's value and updates the corresponding hexagon's color  						
 func set_cell(x: int, y: int, value) -> void:
 	BoardState.grid[x][y] = value
 	var hex = HexagonStates.hexagons[x][y]

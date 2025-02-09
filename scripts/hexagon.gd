@@ -31,18 +31,22 @@ func _ready():
 	input_event.connect(_on_input_event)
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
-	
+
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			hex_clicked.emit(grid_pos) 
 
+## When cursor enters hexagon, make the selected hexagon a bit transparent 
 func _on_mouse_entered():
 	last_color = hex_color
 	polygon.color = Color(last_color.r, last_color.g, last_color.b, 0.7)
 
+## When the hexagon is exited update the color to the previous color value
 func _on_mouse_exited():
 	polygon.color = last_color
-	
+
+## Update the hexagon color
+## Used if the hexagon had its color changed
 func update_visuals():
 	polygon.color = hex_color
