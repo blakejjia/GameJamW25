@@ -32,6 +32,7 @@ grow_vertical = 2
 script = ExtResource("1_jolh3")
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("2_x2koq")
@@ -57,7 +58,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Aiden
 Blake
-Danto
+Inbae
 Yaebin"
 label_settings = SubResource("LabelSettings_eaac3")
 horizontal_alignment = 1
