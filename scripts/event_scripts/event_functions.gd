@@ -25,7 +25,7 @@ func normalize_probabilities() -> void:
 func get_random_empty_position_near(grid: Array, start_x: int, start_y: int, initial_radius: int = 1) -> Vector2i:
 	var grid_width = grid.size()
 	var grid_height = grid[0].size()
-	var max_radius = max(grid_width, grid_height)  # Maximum possible radius
+	var max_radius = max(grid_width, grid_height) # Maximum possible radius
 	
 	# Start from initial radius and expand outward
 	for radius in range(initial_radius, max_radius + 1):
@@ -71,16 +71,16 @@ func check_zombie_damage(turn: int):
 	
 	# Define the directions to check (right, left, up, down)
 	var directions = [
-		Vector2i(1, 0),   # right
-		Vector2i(-1, 0),  # left
-		Vector2i(0, 1),   # down
-		Vector2i(0, -1)   # up    
+		Vector2i(1, 0), # right
+		Vector2i(-1, 0), # left
+		Vector2i(0, 1), # down
+		Vector2i(0, -1) # up
 	]
 	
 	for x in grid.size():
 		for y in grid[x].size():
 			# Skip if not a zombie
-			if grid[x][y] != 4: 
+			if grid[x][y] != 4:
 				continue
 				
 			# Check all adjacent tiles
@@ -95,8 +95,8 @@ func check_zombie_damage(turn: int):
 						PlayerStates.players[turn].health -= 1
 						
 ## Event function for item farming
-func new_item(player_index) :
-	var random_value = randf()  # Random float between 0 and 1
+func new_item(player_index):
+	var random_value = randf() # Random float between 0 and 1
 	var cumulative_probability = 0.0
 	for item in ItemStates.items:
 		cumulative_probability += item.probability
@@ -108,3 +108,18 @@ func new_item(player_index) :
 					print("added: ", item.item_name)
 					return
 					
+func lost(player_index):
+	var player_x = PlayerStates.players[player_index].player_x
+	var player_y = PlayerStates.players[player_index].player_y
+	var new_position = get_random_empty_position_near(BoardState.grid, player_x, player_y)
+	if new_position.x != -1 and new_position.y != -1:
+		BoardState.grid[player_x][player_y] = -1
+		PlayerStates.players[player_index].player_x = new_position.x
+		PlayerStates.players[player_index].player_y = new_position.y
+		BoardState.grid[new_position.x][new_position.y] = player_index
+
+		print("set the grid state of ", player_x, player_y, " to ", BoardState.grid[player_x][player_y])
+		print("old position: ", player_x, player_y, "new position: ", new_position.x, new_position.y)
+	else:
+		## This should show a custom event card but it is pretty much impossible to ever happen
+		print("Nothing happened")

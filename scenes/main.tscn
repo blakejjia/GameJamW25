@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/ui_scripts/event_interface.gd" id="6_f2cj4"]
 [ext_resource type="Script" path="res://scripts/ui_scripts/item_button.gd" id="8_yw2p6"]
 [ext_resource type="Script" path="res://scripts/item_scripts/item_functions.gd" id="9_cdopi"]
-[ext_resource type="Texture2D" uid="uid://b43ijxoi0hsfu" path="res://assets/background/background.png" id="10_8yqn0"]
+[ext_resource type="Texture2D" uid="uid://bxlxvden483wi" path="res://assets/background/background.png" id="10_8yqn0"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -22,6 +22,7 @@ player_count = 4
 event_chance = 0.1
 
 [node name="background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 2276.0
 offset_bottom = 1398.0
 texture = ExtResource("10_8yqn0")
