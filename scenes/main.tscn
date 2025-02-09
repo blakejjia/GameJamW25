@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqtmve83albv6"]
+[gd_scene load_steps=10 format=3 uid="uid://dqtmve83albv6"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_rvwpr"]
 [ext_resource type="Script" path="res://scripts/board_scripts/board_functions.gd" id="2_o663g"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://du6vqarse64rq" path="res://ui/EventInterface.tscn" id="5_yy7da"]
 [ext_resource type="Script" path="res://scripts/event_scripts/event_functions.gd" id="6_ct5nt"]
 [ext_resource type="Script" path="res://scripts/ui_scripts/event_interface.gd" id="6_f2cj4"]
+[ext_resource type="Script" path="res://scripts/ui_scripts/item_button.gd" id="8_yw2p6"]
+[ext_resource type="Script" path="res://scripts/item_scripts/item_functions.gd" id="9_cdopi"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -32,3 +34,13 @@ script = ExtResource("5_utmfj")
 
 [node name="Events" type="Node" parent="."]
 script = ExtResource("6_ct5nt")
+
+[node name="ItemButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 77.0
+offset_bottom = 31.0
+text = "Use Item"
+script = ExtResource("8_yw2p6")
+
+[node name="ItemFunctions" type="Node" parent="ItemButton"]
+script = ExtResource("9_cdopi")

@@ -4,7 +4,7 @@ extends Control
 @onready var event_card: TextureRect = $Container/EventCard
 @onready var container = $Container
 
-const DISPLAY_TIME = 5
+const DISPLAY_TIME = 3.5
 const FADE_TIME = 1
 
 func _ready():

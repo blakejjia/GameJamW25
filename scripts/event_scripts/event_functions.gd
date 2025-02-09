@@ -64,7 +64,9 @@ func zombie_encounter(player_index):
 		## This should show a custom event card but it is pretty much impossible to ever happen
 		print("Nothing happened")
 
-func move_zombies(turn: int):
+## Called at the end of a turn in main.gd, which is probably not ideal
+## Checks if the current player has moved adjacent to a zombie and if so, they will take 1 damage
+func check_zombie_damage(turn: int):
 	var grid = BoardState.grid
 	
 	# Define the directions to check (right, left, up, down)

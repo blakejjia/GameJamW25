@@ -1,6 +1,6 @@
 extends Control
 
-const MAX_MOVE_DIST = 100
+const MAX_MOVE_DIST = 4
 
 @onready var board_functions = get_node("Board")
 @onready var game_interface = get_node("GameInterface")
@@ -64,6 +64,7 @@ func initialize_players():
 		var player_ui = player_interface_scene.instantiate()
 		add_child(player_ui)
 		PlayerStates.players[i].ui = player_ui
+		player_ui.player_id = i
 		ui_handler.update_player_health(10, i)
 		ui_handler.update_player_name(PlayerStates.players[i].player_name, i)
 		ui_handler.update_player_job(PlayerStates.players[i].job, i)
@@ -74,11 +75,13 @@ func initialize_players():
 		player_ui.position = Vector2(200, 100 + (i * 200))
 	ui_handler.update_turn_label()
 		
-## Increments the current turn, then redraws the board
+## Increments the current turn, then updates the board
+## Instead of figuring out when to call UI updates from events
+	## we can just update all the player labels at the end of each turn
 func next_turn():
 	var last_turn = GameState.current_turn
 	GameState.current_turn = (GameState.current_turn + 1) % player_count
-	event_functions.move_zombies(last_turn)
+	event_functions.check_zombie_damage(last_turn)
 	board_functions.update_board()
 	ui_handler.update_turn_label()
 	ui_handler.update_player_labels()

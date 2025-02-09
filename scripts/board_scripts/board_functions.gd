@@ -11,12 +11,15 @@ const OFFSET_Y = HEX_HEIGHT * 0.5
 
 # Draws the board by creating the hexagons
 func draw_board() -> void:
+	var current_player_x = PlayerStates.players[GameState.current_turn].player_x
+	var current_player_y = PlayerStates.players[GameState.current_turn].player_y
 	HexagonStates.hexagons = []
 	var screen_center = get_viewport_rect().size / 2
 	for col in range(BoardState.grid_cols):
 		HexagonStates.hexagons.append([])
 		for row in range(BoardState.grid_rows):
 			var hex = HEX.instantiate()
+			
 			# Different colors based on what's in the grid at that position
 			hex.hex_color = ColorDict.color_dict[BoardState.grid[col][row]]
 			add_child(hex)
@@ -28,15 +31,29 @@ func draw_board() -> void:
 			
 			hex.position = Vector2(x, y)
 			hex.grid_pos = Vector2(col, row)
+			## Highlight current player 
+			if col == current_player_x and row == current_player_y:
+				hex.set_current_player_hex(true)
+			else:
+				hex.set_current_player_hex(false)
+
 			HexagonStates.hexagons[col].append(hex)
 
 # Recolors the board after the grid values have been changed 
 func update_board():
+	var current_player_x = PlayerStates.players[GameState.current_turn].player_x
+	var current_player_y = PlayerStates.players[GameState.current_turn].player_y
+	
 	for col in range(BoardState.grid_cols):
 		for row in range(BoardState.grid_rows):
 			var hex = HexagonStates.hexagons[col][row]
 			hex.hex_color = ColorDict.color_dict[BoardState.grid[col][row]]
 			hex.last_color = hex.hex_color
+			## Highlight current player 
+			if col == current_player_x and row == current_player_y:
+				hex.set_current_player_hex(true)
+			else:
+				hex.set_current_player_hex(false)
 			hex.update_visuals()
 
 ## Sets a board cell's value and updates the corresponding hexagon's color  						

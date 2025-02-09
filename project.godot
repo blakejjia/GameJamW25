@@ -26,6 +26,7 @@ ColorDict="*res://globals/color_dict.gd"
 AssetPaths="*res://globals/asset_paths.gd"
 EventsState="*res://states/events_state.gd"
 Events="*res://globals/events.gd"
+Items="*res://globals/items.gd"
 
 [dotnet]
 

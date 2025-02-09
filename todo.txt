@@ -1,0 +1,6 @@
+Make 'use item' button bigger
+Add item functions in item_functions.gd
+Make the zombies move
+	This would go inside event_functions and could be called from check_zombie_damage. But I'd update the name to just "update_zombies" after
+Win conditions
+Highlight tiles that you can move to
