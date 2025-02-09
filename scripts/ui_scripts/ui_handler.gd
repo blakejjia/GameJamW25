@@ -35,5 +35,10 @@ func show_event(event: Event):
 	event_interface.update_name(event.event_name)
 	var card_path = AssetPaths.event_cards_path + event.slug + AssetPaths.resource_suffix
 	event_interface.update_card(card_path)
-	
+
+
+## Screens
+
+func show_win_screen(winner: Player):
+	print("Show win screen")
 	
