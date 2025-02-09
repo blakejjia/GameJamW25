@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqtmve83albv6"]
+[gd_scene load_steps=8 format=3 uid="uid://dqtmve83albv6"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_rvwpr"]
 [ext_resource type="Script" path="res://scripts/board_scripts/board_functions.gd" id="2_o663g"]
 [ext_resource type="PackedScene" uid="uid://dhx55muj3jf1g" path="res://ui/GameInterface.tscn" id="3_h0sde"]
-[ext_resource type="PackedScene" uid="uid://2sk0rjp5nwso" path="res://ui/PlayerInterface.tscn" id="4_gfo6w"]
 [ext_resource type="Script" path="res://scripts/ui_scripts/ui_handler.gd" id="5_utmfj"]
 [ext_resource type="PackedScene" uid="uid://du6vqarse64rq" path="res://ui/EventInterface.tscn" id="5_yy7da"]
 [ext_resource type="Script" path="res://scripts/event_scripts/event_functions.gd" id="6_ct5nt"]
@@ -22,9 +21,6 @@ event_chance = 0.1
 script = ExtResource("2_o663g")
 
 [node name="GameInterface" parent="." instance=ExtResource("3_h0sde")]
-layout_mode = 1
-
-[node name="PlayerInterface" parent="." instance=ExtResource("4_gfo6w")]
 layout_mode = 1
 
 [node name="EventInterface" parent="." instance=ExtResource("5_yy7da")]
