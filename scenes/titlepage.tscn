@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfcycv14lsful"]
+
+[ext_resource type="Script" path="res://screens/title/titlepage.gd" id="1_jolh3"]
+[ext_resource type="Texture2D" uid="uid://b8x1l27ua7ipw" path="res://assets/background/scenes/title.png" id="2_x2koq"]
+[ext_resource type="FontFile" uid="uid://bvcn4p1l5smr7" path="res://assets/fonts/RaconteurNf-LOlE.ttf" id="3_m7s6j"]
+[ext_resource type="Texture2D" uid="uid://bsbeutcaamtis" path="res://assets/ui_settings/start.png" id="3_molvo"]
+[ext_resource type="Texture2D" uid="uid://bmivv3urh3s1k" path="res://assets/ui_settings/credit.png" id="4_erib8"]
+[ext_resource type="FontFile" uid="uid://c48hh4qechbet" path="res://assets/fonts/Cafe24Simplehae-v2.0.ttf" id="4_u2k2i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1ftv"]
+font = ExtResource("3_m7s6j")
+font_size = 56
+shadow_size = 13
+shadow_color = Color(1, 1, 1, 0.298039)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eaac3"]
+line_spacing = -5.0
+font = ExtResource("4_u2k2i")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[node name="titlepage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jolh3")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_x2koq")
+
+[node name="Credit" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 238.0
+offset_right = 941.0
+offset_bottom = 546.0
+
+[node name="authors" type="Label" parent="Credit"]
+layout_mode = 2
+text = "- Authors -
+"
+label_settings = SubResource("LabelSettings_x1ftv")
+horizontal_alignment = 1
+
+[node name="our_names" type="Label" parent="Credit"]
+layout_mode = 2
+text = "Aiden
+Blake
+Danto
+Yaebin"
+label_settings = SubResource("LabelSettings_eaac3")
+horizontal_alignment = 1
+
+[node name="Basic" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="start_game" type="Button" parent="Basic"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = -68.0
+offset_right = 107.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "
+"
+icon = ExtResource("3_molvo")
+flat = true
+
+[node name="show_credit" type="Button" parent="Basic"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = 70.0
+offset_right = 107.5
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "
+"
+icon = ExtResource("4_erib8")
+flat = true
+
+[connection signal="pressed" from="Basic/start_game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Basic/show_credit" to="." method="_on_show_credit_pressed"]
