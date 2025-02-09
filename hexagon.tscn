@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dclu07ti0r8b0"]
+
+[ext_resource type="Script" path="res://mainGamePage/TheGrid/hexagon.gd" id="1_1tvpn"]
+
+[node name="Hexagon" type="Area2D"]
+script = ExtResource("1_1tvpn")
