@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://p7ts47m61uk7"]
+[gd_scene load_steps=7 format=3 uid="uid://p7ts47m61uk7"]
 
 [ext_resource type="Texture2D" uid="uid://ubob1qm7f4j5" path="res://assets/background/scenes/ending_bg.png" id="1_2dg1e"]
 [ext_resource type="Script" path="res://screens/end/endingScene.gd" id="1_6n4oq"]
 [ext_resource type="FontFile" uid="uid://ca0mfhmdr18f0" path="res://assets/fonts/ResothoExtralight-9YXJK.otf" id="3_7k0yd"]
+[ext_resource type="Texture2D" uid="uid://dwuo6mqomq0er" path="res://assets/ui_settings/restart.png" id="4_cvdcc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kfaff"]
 line_spacing = 5.0
@@ -28,22 +29,6 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_2dg1e")
-
-[node name="Restart" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 454.0
-offset_top = 498.0
-offset_right = 698.0
-offset_bottom = 560.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Restart
-"
 
 [node name="Winner" type="Label" parent="."]
 layout_mode = 1
@@ -83,4 +68,29 @@ process_mode = 3
 disable_3d = true
 size = Vector2i(100, 100)
 
-[connection signal="pressed" from="Restart" to="." method="_restart_game"]
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Restart" type="Button" parent="ReferenceRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -152.0
+offset_right = 108.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "
+"
+icon = ExtResource("4_cvdcc")
+flat = true
+
+[connection signal="pressed" from="ReferenceRect/Restart" to="." method="_restart_game"]

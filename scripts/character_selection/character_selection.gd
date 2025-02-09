@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 var players_data = [
 	Player.new().set_data("David", "Doctor", 3, ["", "", ""], Vector2(1, 2)),
