@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://du6vqarse64rq"]
+[gd_scene load_steps=2 format=3 uid="uid://du6vqarse64rq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3t3b"]
+line_spacing = 1.0
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="EventInterface" type="Control"]
 layout_mode = 3
@@ -16,6 +23,7 @@ offset_bottom = 141.0
 [node name="EventName" type="Label" parent="Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
+label_settings = SubResource("LabelSettings_e3t3b")
 horizontal_alignment = 1
 
 [node name="EventCard" type="TextureRect" parent="Container"]

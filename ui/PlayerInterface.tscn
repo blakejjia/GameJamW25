@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://2sk0rjp5nwso"]
+[gd_scene load_steps=3 format=3 uid="uid://2sk0rjp5nwso"]
 
 [ext_resource type="Script" path="res://scripts/ui_scripts/player_interface.gd" id="1_tdsh8"]
+[ext_resource type="LabelSettings" uid="uid://d3vgqqkkq7f6n" path="res://assets/ui_settings/PlayerInterface.tres" id="2_dn2mx"]
 
 [node name="PlayerInterface" type="Control"]
 layout_mode = 3
@@ -28,9 +29,12 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+label_settings = ExtResource("2_dn2mx")
 
 [node name="Job" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+label_settings = ExtResource("2_dn2mx")
 
 [node name="Health" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+label_settings = ExtResource("2_dn2mx")

@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d3vgqqkkq7f6n"]
+
+[ext_resource type="FontFile" uid="uid://c6b8qtcq21nu3" path="res://assets/fonts/Orbit-Regular.ttf" id="1_r2kil"]
+
+[resource]
+font = ExtResource("1_r2kil")
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
