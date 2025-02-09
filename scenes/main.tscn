@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqtmve83albv6"]
+[gd_scene load_steps=12 format=3 uid="uid://dqtmve83albv6"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_rvwpr"]
+[ext_resource type="Texture2D" uid="uid://dcd0ho2tato2f" path="res://assets/background/background.png" id="2_3aboq"]
 [ext_resource type="Script" path="res://scripts/board_scripts/board_functions.gd" id="2_o663g"]
 [ext_resource type="PackedScene" uid="uid://dhx55muj3jf1g" path="res://ui/GameInterface.tscn" id="3_h0sde"]
+[ext_resource type="Script" path="res://scripts/ui_scripts/background_script.gd" id="3_k5w4s"]
 [ext_resource type="Script" path="res://scripts/ui_scripts/ui_handler.gd" id="5_utmfj"]
 [ext_resource type="PackedScene" uid="uid://du6vqarse64rq" path="res://ui/EventInterface.tscn" id="5_yy7da"]
 [ext_resource type="Script" path="res://scripts/event_scripts/event_functions.gd" id="6_ct5nt"]
@@ -18,6 +20,15 @@ grid_rows = 10
 grid_cols = 12
 player_count = 4
 event_chance = 0.1
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -11.0
+offset_right = 2344.0
+offset_bottom = 1186.0
+texture = ExtResource("2_3aboq")
+script = ExtResource("3_k5w4s")
 
 [node name="Board" type="Node2D" parent="."]
 script = ExtResource("2_o663g")
