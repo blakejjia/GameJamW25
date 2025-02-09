@@ -1,8 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://lb7lyvhc8oy"]
 
 [ext_resource type="Script" path="res://mainGamePage/main.gd" id="1_d7y4p"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cpli2q2jloa7d" path="res://assets/background/TheGrid/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
 [ext_resource type="Texture2D" uid="uid://bf3tkxv76ay6p" path="res://assets/background/bg.png" id="1_lyym1"]
+=======
+[ext_resource type="Texture2D" uid="uid://cqfg5rea4bfxk" path="res://assets/background/TheGrid/HSI - Aqua/HSI_aqua_001.png" id="1_jhm11"]
+[ext_resource type="Texture2D" uid="uid://k6qyvv5cfvb8" path="res://assets/background/bg.png" id="1_lyym1"]
+>>>>>>> b6899f43226e7106b0cf6c01e2b22f351d84c6a4
 [ext_resource type="Script" path="res://mainGamePage/TheGrid/theGrid.gd" id="2_nlp6b"]
 [ext_resource type="Script" path="res://mainGamePage/playerInfo/player_info.gd" id="3_fxolt"]
 [ext_resource type="PackedScene" path="res://mainGamePage/TheGrid/hexagon.tscn" id="4_bxyj8"]

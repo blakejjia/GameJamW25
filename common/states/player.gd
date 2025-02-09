@@ -13,7 +13,7 @@ class_name Player
 ## usually empty when game start, but can be not empty depends of character
 @export var items: Array[String] = []
 
-## this is the place where player is on the grid
+## this is the starting position where player is on the grid
 @export var player_position: Vector2
 
 ## player name
