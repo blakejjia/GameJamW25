@@ -5,12 +5,14 @@ func _ready() -> void:
 	display_winner(1)
 
 func display_winner(winner):
-	var message = "player %s" % str(winner)
-	#var message = "player " + winner.name
+	var players = PlayerStates.players
+	var avatar_assets_path : String = "res://assets/pictures/"
+	var resource_suffix : String = ".png"
+
+	var message = "player " + players[winner].name
 	$Winner.text = message
 	
-	var winner_image = load("res://assets/pictures/doctor.png")
-	#var winner_image = load(avatar_assets_path+winner.job+resource_suffix)
+	var winner_image = load(avatar_assets_path + players[winner].job + resource_suffix)
 	$TextureRect.texture = winner_image
 	#$portrait_frame.texture = ImageTexture.create_from_image(winner_image)
 

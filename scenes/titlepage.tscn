@@ -59,6 +59,9 @@ Yaebin"
 label_settings = SubResource("LabelSettings_eaac3")
 horizontal_alignment = 1
 
+[node name="back_main" type="Button" parent="Credit"]
+layout_mode = 2
+
 [node name="Basic" type="ReferenceRect" parent="."]
 layout_mode = 0
 offset_right = 1152.0
@@ -104,5 +107,6 @@ text = "
 icon = ExtResource("4_erib8")
 flat = true
 
+[connection signal="pressed" from="Credit/back_main" to="." method="_on_back_main_pressed"]
 [connection signal="pressed" from="Basic/start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="Basic/show_credit" to="." method="_on_show_credit_pressed"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://detto0056ba7p"]
+[gd_scene load_steps=6 format=3 uid="uid://dcw4kgufit1q5"]
 
 [ext_resource type="Script" path="res://scripts/character_selection/character_selection.gd" id="1_5rd76"]
-[ext_resource type="Texture2D" uid="uid://cofmee6jflttb" path="res://assets/pictures/doctor_selection.jpg" id="1_t343t"]
-[ext_resource type="Texture2D" uid="uid://ws12hpf33hwf" path="res://assets/pictures/athlete_selection.jpg" id="2_napd6"]
-[ext_resource type="Texture2D" uid="uid://b0igs4pacrp66" path="res://assets/pictures/robbery_selection.jpg" id="3_o32wg"]
-[ext_resource type="Texture2D" uid="uid://bfgxxdbfjhpq1" path="res://assets/pictures/police_selection.jpg" id="4_yclt7"]
+[ext_resource type="Texture2D" uid="uid://cbm3m4pcmhnf4" path="res://assets/pictures/doctor_selection.jpg" id="1_t343t"]
+[ext_resource type="Texture2D" uid="uid://brqwri1o0rs8u" path="res://assets/pictures/athlete_selection.jpg" id="2_napd6"]
+[ext_resource type="Texture2D" uid="uid://cgkspfwh23gwx" path="res://assets/pictures/robbery_selection.jpg" id="3_o32wg"]
+[ext_resource type="Texture2D" uid="uid://ktcbad7nk6k1" path="res://assets/pictures/police_selection.jpg" id="4_yclt7"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3

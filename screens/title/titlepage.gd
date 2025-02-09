@@ -12,9 +12,14 @@ func _process(delta: float) -> void:
 
 
 func _on_start_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/character_selection.tscn")
 
 
 func _on_show_credit_pressed() -> void:
 	$Basic.hide()
 	$Credit.show()
+
+
+func _on_back_main_pressed() -> void:
+	$Credit.hide()
+	$Basic.show()
