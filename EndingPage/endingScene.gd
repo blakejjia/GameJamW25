@@ -11,7 +11,7 @@ func display_winner(winner):
 	
 	var winner_image = load("res://assets/pictures/doctor.png")
 	#var winner_image = load(avatar_assets_path+winner.job+resource_suffix)
-	$TextureRect.texture = ImageTexture.create_from_image(winner_image)
+	$TextureRect.texture = winner_image
 	#$portrait_frame.texture = ImageTexture.create_from_image(winner_image)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,4 +20,4 @@ func _process(delta: float) -> void:
 
 
 func _restart_game() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
