@@ -6,7 +6,9 @@ var grid_pos: Vector2
 var polygon: Polygon2D
 var hex_color = Color.WHITE
 var last_color = Color.WHITE
+
 func _ready():
+	position = Vector2(-100, -100) # default to out of bounds
 	var collision_shape = CollisionPolygon2D.new()
 	var points = PackedVector2Array([
 		Vector2(32, 0),    # Top
@@ -33,7 +35,7 @@ func _ready():
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			hex_clicked.emit(position) 
+			hex_clicked.emit(grid_pos) 
 
 func _on_mouse_entered():
 	last_color = hex_color
@@ -42,4 +44,5 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	polygon.color = last_color
 	
-	
+func update_visuals():
+	polygon.color = hex_color

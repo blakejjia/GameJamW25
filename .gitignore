@@ -1,3 +1,58 @@
-# Godot 4+ specific ignores
+# Ignore Godot's auto-generated project settings and caches
+*.import
+*.translation
+
+# Ignore the `.godot/` folder which contains temporary and user-specific data
 .godot/
-/android/
+
+# Ignore Godot's editor cache files
+.godot/editor/
+.godot/editor_settings-*.tres
+.godot/imported/
+.godot/global_script_class_cache.cfg
+.godot/uid_cache.bin
+
+# Ignore Godot's lock files
+*.godot-lock
+
+# Ignore export-related temporary files
+export_presets.cfg
+
+# Ignore platform-specific files
+*.exe
+*.dll
+*.pdb
+*.app
+*.dmg
+*.apk
+*.tmp
+*.ipa
+*.xcodeproj
+*.xcworkspace
+
+# Ignore build directories
+build/
+dist/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Ignore Godot mono/.NET-specific files
+.mono/
+*.mono
+*.csproj
+*.sln
+*.suo
+*.user
+*.cache
+*.pidb
+*.mdb
+*.pdb
+
+# Ignore any user-specific game saves or settings
+savegame*/
+user://*/

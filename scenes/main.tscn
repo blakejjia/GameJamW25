@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqtmve83albv6"]
+[gd_scene load_steps=4 format=3 uid="uid://dqtmve83albv6"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_rvwpr"]
 [ext_resource type="Script" path="res://scripts/board_functions.gd" id="2_o663g"]
+[ext_resource type="Script" path="res://scripts/hexagon.gd" id="3_felen"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_rvwpr")
 
 [node name="Board" type="Node2D" parent="."]
 script = ExtResource("2_o663g")
+
+[node name="Hexagon" type="Area2D" parent="Board"]
+script = ExtResource("3_felen")
