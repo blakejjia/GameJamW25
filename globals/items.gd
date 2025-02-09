@@ -5,6 +5,6 @@ extends Node
 ## function is the name of the function is excuted on used
 ## slug is the id of the items in assets/items
 var items = [
-		{"item_name": "knife", "probability": 0.3, "function": "attack_knife", "slug": "knife"},
+		{"item_name": "knife", "probability": 1, "function": "attack_knife", "slug": "knife"},
 		{"item_name": "armor", "probability": 0.3, "function": "armor", "slug": "armor"}
 	]

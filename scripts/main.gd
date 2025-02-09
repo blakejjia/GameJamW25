@@ -6,7 +6,7 @@ const MAX_MOVE_DIST = 40
 @onready var game_interface = get_node("GameInterface")
 @onready var ui_handler = get_node("UIHandler")
 @onready var event_functions = get_node("Events")
-
+@onready var item_functions = get_node("ItemButton/ItemFunctions")
 @export var grid_rows: int
 @export var grid_cols: int 
 @export var player_count: int
@@ -23,6 +23,8 @@ func _ready() -> void:
 	initialize_grid()
 	initialize_players()
 	board_functions.draw_board()
+	item_functions.player_updated.connect(ui_handler.update_player_labels)
+	item_functions.board_updated.connect(board_functions.update_board)
 	for col in HexagonStates.hexagons:
 		for hexagon in col:
 			hexagon.connect("hex_clicked", on_tile_clicked)
@@ -57,7 +59,7 @@ func initialize_players():
 	if GameState.player_count > 3:
 		grid[grid.size() - 1][0] = 3 # Bottom left
 		PlayerStates.players.append(Player.create(10, "d", "robber", grid.size() - 1, 0, ["empty", "empty", "empty"], 3))
-	
+
 	## Initialize UI elements
 	for i in range(GameState.player_count):
 		var player_ui = player_interface_scene.instantiate()
@@ -73,7 +75,7 @@ func initialize_players():
 		
 		player_ui.position = Vector2(200, 100 + (i * 200))
 	ui_handler.update_turn_label()
-		
+
 ## Increments the current turn, then updates the board
 ## Instead of figuring out when to call UI updates from events
 	## we can just update all the player labels at the end of each turn
