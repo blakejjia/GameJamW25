@@ -1,6 +1,6 @@
 extends Control
 
-const MAX_MOVE_DIST = 4
+const MAX_MOVE_DIST = 100
 
 @onready var board_functions = get_node("Board")
 @onready var game_interface = get_node("GameInterface")
@@ -118,5 +118,6 @@ func event_triggered():
 		cumulative_probability += event.probability
 		if random_value <= cumulative_probability:
 			print("Triggered event: ", event.event_name)
+			ui_handler.show_event(event)
 			event.effect.call(GameState.current_turn)
 			return

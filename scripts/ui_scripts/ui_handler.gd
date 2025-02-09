@@ -1,6 +1,9 @@
 extends Node
 
 @onready var game_interface = get_tree().current_scene.get_node("GameInterface")
+@onready var event_interface = get_tree().current_scene.get_node("EventInterface")
+
+## Player related UI functions
 
 func update_player_job(new_job: String, index: int) -> void:
 	PlayerStates.players[index].ui.update_job(new_job)
@@ -26,3 +29,11 @@ func update_player_labels() -> void:
 		update_player_health(player.health, player.id)
 		update_player_items(player.items, player.id)
 		
+## Event related UI functions
+
+func show_event(event: Event):
+	event_interface.update_name(event.event_name)
+	var card_path = AssetPaths.event_cards_path + event.slug + AssetPaths.resource_suffix
+	event_interface.update_card(card_path)
+	
+	

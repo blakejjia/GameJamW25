@@ -4,5 +4,6 @@ extends Node
 ## DO NOT appear MAGIC numbers or strings in your code!!!
 const common_assets_path:String = "res://assets/common/"
 const avatar_assets_path:String = "res://assets/pictures/"
+const event_cards_path:String = "res://assets/event-cards/EventCard_"
 const item_assets_path:String = "res://assets/items/"
 const resource_suffix:String = ".png"

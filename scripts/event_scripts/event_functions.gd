@@ -5,7 +5,8 @@ func _ready() -> void:
 		var event_name = event["event_name"]
 		var probability = event["probability"]
 		var function = Callable(self, event["function"])
-		EventsState.events.append(Event.create(event_name, probability, function))
+		var slug = event["slug"]
+		EventsState.events.append(Event.create(event_name, probability, function, slug))
 
 	# Normalize probabilities to ensure they sum to 1
 	normalize_probabilities()

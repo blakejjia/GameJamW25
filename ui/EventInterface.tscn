@@ -11,10 +11,12 @@ grow_vertical = 2
 [node name="Container" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 141.0
 
 [node name="EventName" type="Label" parent="Container"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
 
-[node name="EventIcon" type="TextureRect" parent="Container"]
+[node name="EventCard" type="TextureRect" parent="Container"]
 layout_mode = 2
