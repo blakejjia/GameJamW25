@@ -25,12 +25,9 @@ func update_turn_label() -> void:
 	game_interface.update_turn(current_player_name + "'s" + " Turn")
 
 func update_player_labels() -> void:
-	var i = 0
 	for player in PlayerStates.players:
 		update_player_health(player.health, player.id)
-		print("Player ", i, " items: ", str(player.items))
 		update_player_items(player.items, player.id)
-		i += 1
 		
 ## Event related UI functions
 
