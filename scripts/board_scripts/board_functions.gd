@@ -1,6 +1,6 @@
 extends Node2D
 
-const HEX = preload("res://scenes//hexagon.tscn")
+const HEX = preload(ScenePaths.hexagon_path)
 
 # Hex dimensions
 const HEX_SIZE = 64  # distance from center to corner

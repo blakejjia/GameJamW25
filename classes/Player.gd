@@ -1,4 +1,6 @@
 extends Node
+
+## Class defined like this to be global
 class_name Player
 
 var health: int
@@ -7,7 +9,6 @@ var job: String
 var player_x: int
 var player_y: int
 var ui
-var selected_item_index: int
 
 ## id corresponds to the player's turn number and array index in PlayerStates.players
 var id: int

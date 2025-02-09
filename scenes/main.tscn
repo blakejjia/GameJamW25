@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqtmve83albv6"]
+[gd_scene load_steps=7 format=3 uid="uid://dqtmve83albv6"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_rvwpr"]
 [ext_resource type="Script" path="res://scripts/board_scripts/board_functions.gd" id="2_o663g"]
 [ext_resource type="PackedScene" uid="uid://dhx55muj3jf1g" path="res://ui/GameInterface.tscn" id="3_h0sde"]
 [ext_resource type="PackedScene" uid="uid://2sk0rjp5nwso" path="res://ui/PlayerInterface.tscn" id="4_gfo6w"]
+[ext_resource type="Script" path="res://scripts/ui_scripts/ui_handler.gd" id="5_utmfj"]
+[ext_resource type="Script" path="res://scripts/event_scripts/event_functions.gd" id="6_ct5nt"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_rvwpr")
+grid_rows = 10
+grid_cols = 12
+player_count = 4
+event_chance = 0.1
 
 [node name="Board" type="Node2D" parent="."]
 script = ExtResource("2_o663g")
@@ -18,3 +24,9 @@ layout_mode = 1
 
 [node name="PlayerInterface" parent="." instance=ExtResource("4_gfo6w")]
 layout_mode = 1
+
+[node name="UIHandler" type="Node" parent="."]
+script = ExtResource("5_utmfj")
+
+[node name="Events" type="Node" parent="."]
+script = ExtResource("6_ct5nt")

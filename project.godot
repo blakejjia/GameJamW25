@@ -23,6 +23,9 @@ GameState="*res://states/game_state.gd"
 HexagonStates="*res://states/hexagon_states.gd"
 ScenePaths="*res://globals/scene_paths.gd"
 ColorDict="*res://globals/color_dict.gd"
+AssetPaths="*res://globals/asset_paths.gd"
+EventsState="*res://states/events_state.gd"
+Events="*res://globals/events.gd"
 
 [dotnet]
 
