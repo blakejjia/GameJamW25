@@ -3,6 +3,8 @@ extends Node
 
 ## These functions are where we would implement the actual logic for the items
 	## armor for example could increment a defense property in the Player class
+func draw_items() :
+	pass
 
 func armor():
 	print(PlayerStates.players[GameState.current_turn].name, " used armor")

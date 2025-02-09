@@ -93,3 +93,7 @@ func check_zombie_damage(turn: int):
 					if grid[check_x][check_y] == turn:
 						# Deal damage to the player
 						PlayerStates.players[turn].health -= 1
+						
+## Event function for item farming
+func new_item(player_index) :
+	pass
