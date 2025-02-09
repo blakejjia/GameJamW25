@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqtmve83albv6"]
+[gd_scene load_steps=12 format=3 uid="uid://dqtmve83albv6"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_rvwpr"]
 [ext_resource type="Script" path="res://scripts/board_scripts/board_functions.gd" id="2_o663g"]
 [ext_resource type="PackedScene" uid="uid://dhx55muj3jf1g" path="res://ui/GameInterface.tscn" id="3_h0sde"]
+[ext_resource type="Script" path="res://scripts/ui_scripts/background.gd" id="4_vr3wn"]
 [ext_resource type="Script" path="res://scripts/ui_scripts/ui_handler.gd" id="5_utmfj"]
 [ext_resource type="PackedScene" uid="uid://du6vqarse64rq" path="res://ui/EventInterface.tscn" id="5_yy7da"]
 [ext_resource type="Script" path="res://scripts/event_scripts/event_functions.gd" id="6_ct5nt"]
 [ext_resource type="Script" path="res://scripts/ui_scripts/event_interface.gd" id="6_f2cj4"]
 [ext_resource type="Script" path="res://scripts/ui_scripts/item_button.gd" id="8_yw2p6"]
 [ext_resource type="Script" path="res://scripts/item_scripts/item_functions.gd" id="9_cdopi"]
+[ext_resource type="Texture2D" uid="uid://b43ijxoi0hsfu" path="res://assets/background/background.png" id="10_8yqn0"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -19,7 +21,14 @@ grid_cols = 12
 player_count = 4
 event_chance = 0.1
 
+[node name="background" type="TextureRect" parent="."]
+offset_right = 2276.0
+offset_bottom = 1398.0
+texture = ExtResource("10_8yqn0")
+script = ExtResource("4_vr3wn")
+
 [node name="Board" type="Node2D" parent="."]
+position = Vector2(143, 141)
 script = ExtResource("2_o663g")
 
 [node name="GameInterface" parent="." instance=ExtResource("3_h0sde")]
