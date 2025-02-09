@@ -1,6 +1,6 @@
 extends Control
 
-const MAX_MOVE_DIST = 4
+const MAX_MOVE_DIST = 40
 
 @onready var board_functions = get_node("Board")
 @onready var game_interface = get_node("GameInterface")
@@ -44,20 +44,19 @@ func initialize_grid():
 
 func initialize_players():
 	var grid = BoardState.grid
-	var default_items: Array[String] = ["empty", "empty", "empty"]
 	## Add players to board
 	if GameState.player_count > 0:
 		grid[0][0] = 0 # Top left
-		PlayerStates.players.append(Player.create(10, "a", "doctor", 0, 0, default_items, 0))
+		PlayerStates.players.append(Player.create(10, "a", "doctor", 0, 0, ["empty", "empty", "empty"], 0))
 	if GameState.player_count > 1: 
 		grid[grid.size() - 1][grid[0].size() - 1] = 1 # Bottom right
-		PlayerStates.players.append(Player.create(10, "b", "athletic", grid.size() - 1, grid[0].size() - 1, default_items, 1))
+		PlayerStates.players.append(Player.create(10, "b", "athletic", grid.size() - 1, grid[0].size() - 1, ["empty", "empty", "empty"], 1))
 	if GameState.player_count > 2:
 		grid[0][grid[0].size() - 1] = 2 # Top right
-		PlayerStates.players.append(Player.create(10, "c", "police", 0, grid[0].size() - 1, default_items, 2))
+		PlayerStates.players.append(Player.create(10, "c", "police", 0, grid[0].size() - 1, ["empty", "empty", "empty"], 2))
 	if GameState.player_count > 3:
 		grid[grid.size() - 1][0] = 3 # Bottom left
-		PlayerStates.players.append(Player.create(10, "d", "robber", grid.size() - 1, 0, default_items, 3))
+		PlayerStates.players.append(Player.create(10, "d", "robber", grid.size() - 1, 0, ["empty", "empty", "empty"], 3))
 	
 	## Initialize UI elements
 	for i in range(GameState.player_count):

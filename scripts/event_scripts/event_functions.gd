@@ -7,7 +7,7 @@ func _ready() -> void:
 		var function = Callable(self, event["function"])
 		var slug = event["slug"]
 		EventsState.events.append(Event.create(event_name, probability, function, slug))
-
+				
 	# Normalize probabilities to ensure they sum to 1
 	normalize_probabilities()
 
@@ -96,4 +96,15 @@ func check_zombie_damage(turn: int):
 						
 ## Event function for item farming
 func new_item(player_index) :
-	pass
+	var random_value = randf()  # Random float between 0 and 1
+	var cumulative_probability = 0.0
+	for item in ItemStates.items:
+		cumulative_probability += item.probability
+		if random_value <= cumulative_probability:
+			for i in range(PlayerStates.players[GameState.current_turn].items.size()):
+				var player_item = PlayerStates.players[GameState.current_turn].items[i]
+				if player_item == "empty":
+					PlayerStates.players[GameState.current_turn].items[i] = item.item_name
+					print("added: ", item.item_name)
+					return
+					

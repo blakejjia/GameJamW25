@@ -6,7 +6,7 @@ var probability: float  # Between 0 and 1
 var effect: Callable
 var slug: String
 
-static func create(item_name: String, event_probability: float, item_effect: Callable, slug: String) -> Event:
+static func create(item_name: String, event_probability: float, item_effect: Callable, slug: String) -> Item:
 	var instance = Item.new()
 	instance.item_name = item_name
 	instance.probability = event_probability
