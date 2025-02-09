@@ -1,7 +1,7 @@
 extends Control
 
-const MAX_MOVE_DIST = 4
-const DEFAULT_HEALTH = 5
+const MAX_MOVE_DIST = 40
+const DEFAULT_HEALTH = 1
 
 @onready var board_functions = get_node("Board")
 @onready var game_interface = get_node("GameInterface")

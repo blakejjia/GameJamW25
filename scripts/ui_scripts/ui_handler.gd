@@ -2,6 +2,7 @@ extends Node
 
 @onready var game_interface = get_tree().current_scene.get_node("GameInterface")
 @onready var event_interface = get_tree().current_scene.get_node("EventInterface")
+var end_scene = preload(ScenePaths.ending_scene_path)
 
 ## Player related UI functions
 
@@ -41,4 +42,9 @@ func show_event(event: Event):
 
 func show_win_screen(winner: Player):
 	print("Show win screen")
-	
+	var end_scene_instance = end_scene.instantiate()
+	end_scene_instance.winner = winner
+	# Switch to the end scene
+	get_tree().root.add_child(end_scene_instance)
+	# Remove the current scene
+	get_tree().current_scene.queue_free()

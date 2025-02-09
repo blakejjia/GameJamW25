@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://p7ts47m61uk7"]
+[gd_scene load_steps=7 format=3 uid="uid://c0jfggqorpuhq"]
 
-[ext_resource type="Texture2D" uid="uid://ubob1qm7f4j5" path="res://assets/background/scenes/ending_bg.png" id="1_2dg1e"]
+[ext_resource type="Texture2D" uid="uid://e7i542kkau3e" path="res://assets/background/scenes/ending_bg.png" id="1_2dg1e"]
 [ext_resource type="Script" path="res://screens/end/endingScene.gd" id="1_6n4oq"]
-[ext_resource type="FontFile" uid="uid://ca0mfhmdr18f0" path="res://assets/fonts/ResothoExtralight-9YXJK.otf" id="3_7k0yd"]
-[ext_resource type="Texture2D" uid="uid://dwuo6mqomq0er" path="res://assets/ui_settings/restart.png" id="4_cvdcc"]
+[ext_resource type="FontFile" uid="uid://gg00x1r62bge" path="res://assets/fonts/ResothoExtralight-9YXJK.otf" id="3_7k0yd"]
+[ext_resource type="Texture2D" uid="uid://k5gsn3jtkhf" path="res://assets/ui_settings/restart.png" id="4_cvdcc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kfaff"]
 line_spacing = 5.0
@@ -62,11 +62,6 @@ offset_bottom = 381.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("ViewportTexture_nnl85")
-
-[node name="portrait_frame" type="SubViewport" parent="."]
-process_mode = 3
-disable_3d = true
-size = Vector2i(100, 100)
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 layout_mode = 0
